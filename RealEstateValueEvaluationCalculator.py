@@ -16,6 +16,8 @@ class Bwp():
         self.shops = input("\nGrocery Shops  available? [y/n]: ")
         self.StreetSize = int(input("General Street Size? [in Feet]"))
         self.garder = input("Garden or Children Play Area? [y/n]: ")
+        self.double = input("Your Plot have two Street Facing? [y/n]: ")
+
 
 
     # To ask some specific information about your property and compare it with our defined standards
@@ -35,6 +37,8 @@ class Bwp():
             if self.SD <= 500:
                 self.rate = self.rate + FivePercent
 
+        if self.double:
+            self.rate = self.rate + (2 *FivePercent)
 
         if self.garder == 'y':
             self.GD = int(input("Your Plot Distance from Garden or Play Area? [in meters]: "))
